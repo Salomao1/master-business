@@ -26,7 +26,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #630000;
+            background-color: rgb(0, 217, 255);
             display: flex;
             justify-content: flex-end; /* Alinhando o menu à direita */
             align-items: center;
@@ -50,6 +50,7 @@
             display: flex;
             justify-content: space-around;
             margin-right: 20px; /* Espaço à direita do menu */
+            font-weight: bold; /* Adicionando negrito ao texto do menu */
         }
 
         .search-bar {
@@ -96,10 +97,14 @@
 }
 
 
+
+
         .hero {
             background-image: url('img/promocao/imagem\ de\ fundo.jpg');
             background-size: cover;
             background-position: center;
+            padding: 100px 0;
+            text-align: center;
             height: 400px;
             color: white;
             display: flex;
@@ -107,14 +112,36 @@
             align-items: center;
             margin-top: -25px; /* Aumentar margem para dar espaço para o menu fixo */
             position: relative;
+            overflow: hidden;
         }
 
         .hero h2 {
-            font-size: 3em;
-            background-color: rgba(0, 0, 0, 0.5);
+font-size: 3em;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
             padding: 20px;
+            border-radius: 10px; /* Arredondar os cantos */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+            animation: fadeIn 1s ease-in-out; /* Animação de entrada */
+            transition: transform 0.3s ease, color 0.3s ease; /* Transição suave para efeitos */
         }
 
+        .hero h2:hover {
+                       color: #FFD700; /* Mudar a cor do texto ao passar o mouse */
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px); /* Move o texto um pouco para cima durante a animação */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Texto na posição original */
+            }
+        }
+
+
+        
         section {
             padding: 20px;
             margin-top: 20px; /* Adiciona espaço entre seções */
@@ -150,7 +177,7 @@
         }
 
         .product button {
-            background-color: #4CAF50;
+            background-color: rgb(0, 217, 255);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -192,7 +219,7 @@
         }
 
         #contato form button {
-            background-color: #4CAF50;
+            background-color: rgb(0, 217, 255);
             color: white;
             border: none;
             cursor: pointer;
@@ -395,7 +422,13 @@
             </div>
         </div>
     </section>
-
+    <section id="carrinho">
+        <h2>Carrinho de Compras</h2>
+        <div id="carrinho-itens">
+            <!-- Itens do carrinho serão adicionados aqui -->
+        </div>
+        <p id="total">Total: 0 AOA</p>
+    </section>
     <footer>
         <p>&copy; 2024 Master Business. Todos os direitos reservados.</p>
     </footer>
