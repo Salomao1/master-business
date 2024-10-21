@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Master Business</title>
+    <title>Master Business - Sua Loja de Sucesso</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,13 +17,15 @@
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 1em 0;
+            padding: 1.5em 0;
         }
 
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
             background-color: #333;
+            padding: 0 10px;
         }
 
         nav a {
@@ -38,22 +40,101 @@
             color: black;
         }
 
+        .cart {
+            color: white;
+            font-size: 1.2em;
+            padding-right: 20px;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1500x400');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
         section {
             padding: 20px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .product p {
+            color: #333;
+        }
+
+        .product button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background-color: #45a049;
         }
 
         footer {
             background-color: #333;
             color: white;
             text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
             padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
         }
 
         .content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
     </style>
@@ -64,42 +145,137 @@
     </header>
 
     <nav>
-        <a href="#home">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
+        <div>
+            <a href="#home">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <div class="cart">
+            🛒 Carrinho (0)
+        </div>
     </nav>
 
-    <section id="home">
+    <section class="hero" id="home">
+        <h2>Promoção Especial - Compre Agora!</h2>
+    </section>
+
+    <section id="produtos">
         <div class="content">
-            <h2>Seção Inicial</h2>
-            <p>Esta é a página principal do seu site. Aqui você pode adicionar uma introdução ou destaque sobre o que o seu site oferece.</p>
+            <h2>Nossos Produtos</h2>
+            <div class="products">
+                <!-- Produto 1 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 1">
+                    <h3>Produto 1</h3>
+                    <p>Descrição do produto 1. Preço: 5.000 AOA</p>
+                    <button>Comprar</button>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 2">
+                    <h3>Produto 2</h3>
+                    <p>Descrição do produto 2. Preço: 7.500 AOA</p>
+                    <button>Comprar</button>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 3">
+                    <h3>Produto 3</h3>
+                    <p>Descrição do produto 3. Preço: 10.000 AOA</p>
+                    <button>Comprar</button>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 4">
+                    <h3>Produto 4</h3>
+                    <p>Descrição do produto 4. Preço: 12.500 AOA</p>
+                    <button>Comprar</button>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 5">
+                    <h3>Produto 5</h3>
+                    <p>Descrição do produto 5. Preço: 15.000 AOA</p>
+                    <button>Comprar</button>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 6">
+                    <h3>Produto 6</h3>
+                    <p>Descrição do produto 6. Preço: 17.500 AOA</p>
+                    <button>Comprar</button>
+                </div>
+
+                <!-- Produto 7 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 7">
+                    <h3>Produto 7</h3>
+                    <p>Descrição do produto 7. Preço: 20.000 AOA</p>
+                    <button>Comprar</button>
+                </div>
+
+                <!-- Produto 8 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 8">
+                    <h3>Produto 8</h3>
+                    <p>Descrição do produto 8. Preço: 22.500 AOA</p>
+                    <button>Comprar</button>
+                </div>
+
+                <!-- Produto 9 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 9">
+                    <h3>Produto 9</h3>
+                    <p>Descrição do produto 9. Preço: 25.000 AOA</p>
+                    <button>Comprar</button>
+                </div>
+
+                <!-- Produto 10 -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/300" alt="Produto 10">
+                    <h3>Produto 10</h3>
+                    <p>Descrição do produto 10. Preço: 30.000 AOA</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="sobre">
         <div class="content">
             <h2>Sobre Nós</h2>
-            <p>Adicione informações sobre a sua empresa ou sobre você. Fale sobre sua missão, visão e valores.</p>
-        </div>
-    </section>
-
-    <section id="servicos">
-        <div class="content">
-            <h2>Serviços</h2>
-            <p>Detalhe os serviços ou produtos que você oferece.</p>
+            <p>Somos uma empresa especializada em oferecer os melhores produtos do mercado. Com foco na qualidade e no atendimento ao cliente, buscamos sempre proporcionar a melhor experiência de compra.</p>
         </div>
     </section>
 
     <section id="contato">
         <div class="content">
             <h2>Contato</h2>
-            <p>Entre em contato conosco pelo e-mail: exemplo@dominio.com</p>
+            <form action="mailto:exemplo@dominio.com" method="post" enctype="text/plain">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome"><br><br>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="mensagem">Mensagem:</label><br>
+                <textarea id="mensagem" name="mensagem"></textarea><br><br>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Serviço</a>
+            <a href="#">Redes Sociais</a>
+        </div>
+        <p>&copy; 2024 Master Business. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
