@@ -27,14 +27,10 @@
             width: 100%;
             background-color: #333;
             display: flex;
-            justify-content: space-between; /* Muda para "space-between" */
+            justify-content: flex-end; /* Alinhando o menu à direita */
             align-items: center;
             padding: 10px 20px;
             z-index: 1000;
-        }
-
-        .logo {
-            margin-right: 20px; /* Espaço à direita do logo */
         }
 
         nav a {
@@ -51,8 +47,8 @@
 
         .menu {
             display: flex;
-            justify-content: flex-end; /* Alinha o menu à direita */
-            align-items: center;
+            justify-content: space-around;
+            margin-right: 20px; /* Espaço à direita do menu */
         }
 
         .search-bar {
@@ -83,10 +79,27 @@
         }
 
         .cart {
-            color: white;
-            font-size: 1.2em;
-            margin-left: 10px; /* Espaço entre o carrinho e a barra de pesquisa */
-        }
+    color: white;
+    font-size: 1.2em;
+    padding: 1px 5px;
+    background-color: #4CAF50;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart:hover {
+    background-color: #45a049; /* Cor ao passar o mouse */
+}
+
+.cart::before {
+    content: "     "; /* Adiciona ícone de carrinho antes do texto */
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
 
         .hero {
             background-image: url('https://via.placeholder.com/1500x400');
@@ -225,12 +238,12 @@
         @media (max-width: 768px) {
             nav {
                 flex-direction: column; /* Altera o layout da navegação */
-                align-items: flex-start; /* Alinha os itens à esquerda */
+                align-items: flex-end; /* Alinha os itens à direita */
             }
 
             .menu {
                 width: 100%; /* Menu ocupa 100% da largura */
-                justify-content: flex-start; /* Alinha o menu à esquerda */
+                justify-content: flex-end; /* Alinha o menu à direita */
                 margin-bottom: 10px; /* Espaço entre menu e barra de busca */
             }
 
@@ -265,9 +278,6 @@
     </header>
 
     <nav>
-        <div class="logo">
-            <img src="https://via.placeholder.com/100x50?text=Logo" alt="Logo da Empresa">
-        </div>
         <div class="menu">
             <a href="#home">Início</a>
             <a href="#produtos">Produtos</a>
@@ -293,35 +303,35 @@
             <div class="products">
                 <!-- Produtos -->
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Produto 1">
-                    <h3>Produto 1</h3>
-                    <p>Descrição do Produto 1</p>
+                    <img src="img/informaticos/Placa de son.png" alt="Produto 1">
+                    <h3>Scarlet 2i2</h3>
+                    <p>Placa de som de alta qualidade 24 bts</p>
                     <p>Preço: 5.000 AOA</p>
                     <button>Adicionar ao Carrinho</button>
                 </div>
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Produto 2">
-                    <h3>Produto 2</h3>
-                    <p>Descrição do Produto 2</p>
+                    <img src="img/informaticos/mouse_game_rgb.jpg" alt="Produto 2">
+                    <h3>Mouse Gamer</h3>
+                    <p>Cabo USB, 2 metros, LED exterir</p>
                     <p>Preço: 10.000 AOA</p>
                     <button>Adicionar ao Carrinho</button>
                 </div>
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Produto 3">
+                    <img src="img/informaticos/piano.jpg" alt="Produto 3">
                     <h3>Produto 3</h3>
                     <p>Descrição do Produto 3</p>
                     <p>Preço: 15.000 AOA</p>
                     <button>Adicionar ao Carrinho</button>
                 </div>
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Produto 4">
+                    <img src="img/informaticos/teclado mecanico.webp" alt="Produto 4">
                     <h3>Produto 4</h3>
                     <p>Descrição do Produto 4</p>
                     <p>Preço: 20.000 AOA</p>
                     <button>Adicionar ao Carrinho</button>
                 </div>
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Produto 5">
+                    <img src="img/informaticos/amplificador.webp" alt="Produto 5">
                     <h3>Produto 5</h3>
                     <p>Descrição do Produto 5</p>
                     <p>Preço: 25.000 AOA</p>
