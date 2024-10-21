@@ -14,10 +14,11 @@
         }
 
         header {
-            background-color: #4CAF50;
+            background-color: #ffffff;
             color: white;
             text-align: center;
-            padding: 1.5em 0;
+            padding: 0.5em 0; /* Reduzido para mover o header para cima */
+            margin-bottom: 0; /* Remove qualquer margem inferior */
         }
 
         nav {
@@ -25,7 +26,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #333;
+            background-color: #630000;
             display: flex;
             justify-content: flex-end; /* Alinhando o menu à direita */
             align-items: center;
@@ -52,42 +53,36 @@
         }
 
         .search-bar {
-            display: flex;
-            align-items: center;
-            margin-right: 20px; /* Espaço à direita da barra de pesquisa */
-        }
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Espaço à direita da barra de pesquisa */
+}
 
-        .search-bar input {
-            padding: 5px;
-            border-radius: 5px;
-            border: none;
-            width: 200px;
-        }
+.search-icon {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    cursor: pointer; /* Mão ao passar o mouse */
+    font-size: 1.5em; /* Tamanho do ícone */
+    color: white; /* Cor do ícone */
+}
 
-        .search-bar button {
-            padding: 6px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-left: 5px;
-            cursor: pointer;
-        }
+.search-icon:hover {
+    color: #ddd; /* Mudança de cor ao passar o mouse */
+}
 
-        .search-bar button:hover {
-            background-color: #45a049;
-        }
 
         .cart {
-    color: white;
+    color: rgb(104, 0, 0);
     font-size: 1.2em;
     padding: 1px 5px;
-    background-color: #4CAF50;
+    background-color: #ffffff;
     border-radius: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-left: 20px; /* Adicionado para criar espaço à esquerda */
+    margin-right: 80px; /* Adicionando margem à direita */
 }
 
 .cart:hover {
@@ -102,7 +97,7 @@
 
 
         .hero {
-            background-image: url('https://via.placeholder.com/1500x400');
+            background-image: url('img/promocao/imagem\ de\ fundo.jpg');
             background-size: cover;
             background-position: center;
             height: 400px;
@@ -110,7 +105,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 60px; /* Aumentar margem para dar espaço para o menu fixo */
+            margin-top: -25px; /* Aumentar margem para dar espaço para o menu fixo */
+            position: relative;
         }
 
         .hero h2 {
@@ -285,8 +281,7 @@
             <a href="#contato">Contatos</a>
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="Buscar produtos...">
-            <button>Buscar</button>
+            <button class="search-icon">🔍</button> <!-- Ícone de busca -->
         </div>
         <div class="cart">
             🛒 Carrinho (0)
