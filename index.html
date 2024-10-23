@@ -1,438 +1,465 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Master Business - Sua Loja de Sucesso</title>
+    <title>MASTER BUSINESS Vendas Online</title>
     <style>
+        /* CSS dentro do HTML para evitar erros */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column; /* Alinhar elementos em coluna */
+            min-height: 100vh; /* Garantir que o corpo ocupe toda a altura da tela */
+            position: relative; /* Para permitir que a seção de detalhes fique em cima do carrinho */
         }
 
         header {
-            background-color: #ffffff;
-            color: white;
+            background-color: #3a3a3a;
+            color: #fff;
+            padding: 20px;
             text-align: center;
-            padding: 0.5em 0; /* Reduzido para mover o header para cima */
-            margin-bottom: 0; /* Remove qualquer margem inferior */
+        }
+
+        h1 {
+            margin: 0;
         }
 
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgb(0, 217, 255);
-            display: flex;
-            justify-content: flex-end; /* Alinhando o menu à direita */
-            align-items: center;
-            padding: 10px 20px;
-            z-index: 1000;
+            margin: 10px 0;
+            text-align: center;
         }
 
         nav a {
-            color: white;
-            padding: 14px 20px;
+            color: #fff;
+            padding: 15px;
             text-decoration: none;
-            text-align: center;
+            font-size: 1.2em;
         }
 
         nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .menu {
-            display: flex;
-            justify-content: space-around;
-            margin-right: 20px; /* Espaço à direita do menu */
-            font-weight: bold; /* Adicionando negrito ao texto do menu */
-        }
-
-        .search-bar {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Espaço à direita da barra de pesquisa */
-}
-
-.search-icon {
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Sem borda */
-    cursor: pointer; /* Mão ao passar o mouse */
-    font-size: 1.5em; /* Tamanho do ícone */
-    color: white; /* Cor do ícone */
-}
-
-.search-icon:hover {
-    color: #ddd; /* Mudança de cor ao passar o mouse */
-}
-
-
-        .cart {
-    color: rgb(104, 0, 0);
-    font-size: 1.2em;
-    padding: 1px 5px;
-    background-color: #ffffff;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 20px; /* Adicionado para criar espaço à esquerda */
-    margin-right: 80px; /* Adicionando margem à direita */
-}
-
-.cart:hover {
-    background-color: #45a049; /* Cor ao passar o mouse */
-}
-
-.cart::before {
-    content: "     "; /* Adiciona ícone de carrinho antes do texto */
-    font-size: 1.5em;
-    margin-right: 10px;
-}
-
-
-
-
-        .hero {
-            background-image: url('img/promocao/imagem\ de\ fundo.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            text-align: center;
-            height: 400px;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: -25px; /* Aumentar margem para dar espaço para o menu fixo */
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero h2 {
-font-size: 3em;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-            padding: 20px;
-            border-radius: 10px; /* Arredondar os cantos */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
-            animation: fadeIn 1s ease-in-out; /* Animação de entrada */
-            transition: transform 0.3s ease, color 0.3s ease; /* Transição suave para efeitos */
-        }
-
-        .hero h2:hover {
-                       color: #FFD700; /* Mudar a cor do texto ao passar o mouse */
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px); /* Move o texto um pouco para cima durante a animação */
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0); /* Texto na posição original */
-            }
-        }
-
-
-        
-        section {
-            padding: 20px;
-            margin-top: 20px; /* Adiciona espaço entre seções */
+            background-color: #000;
         }
 
         .products {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+            flex-grow: 1; /* Permitir que a seção de produtos cresça */
         }
 
         .product {
-            background-color: white;
-            padding: 20px;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 30%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 15px;
+            padding: 10px;
+            width: 250px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .product img {
-            max-width: 100%;
-            border-radius: 10px;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
         .product h3 {
             margin: 10px 0;
         }
 
-        .product p {
-            color: #333;
-        }
-
         .product button {
-            background-color: rgb(0, 217, 255);
-            color: white;
+            background-color: #ff5722;
+            color: #fff;
             border: none;
             padding: 10px 20px;
-            border-radius: 5px;
             cursor: pointer;
+            font-size: 0.9em; /* Diminuir tamanho da fonte */
         }
 
         .product button:hover {
-            background-color: #45a049;
+            background-color: #e64a19;
         }
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
+        .cart {
+            background-color: #fff;
+            padding: 10px; /* Diminuir padding */
+            position: fixed;
+            bottom: 0; /* Fixar na parte inferior */
+            left: 0; /* Fixar na esquerda */
+            width: 100%; /* Largura total */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra superior */
+            z-index: 1000; /* Certificar que o carrinho fique acima de outros elementos */
         }
 
-        .content {
-            max-width: 1200px;
-            margin: 0 auto;
+        .cart h2 {
+            margin: 0;
+            font-size: 1.5em; /* Ajustar tamanho da fonte */
         }
 
-        /* Estilos para a seção de contato */
-        #contato form {
+        .cart-item {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 600px;
-            margin: 0 auto;
+            justify-content: space-between;
+            margin: 5px 0; /* Diminuir margem */
+            align-items: center; /* Alinhar itens ao centro */
+            padding-right: 20px; /* Adiciona espaço à direita */
         }
 
-        #contato form input, #contato form textarea, #contato form button {
-            padding: 10px;
-            font-size: 1em;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+        .cart-total {
+            font-size: 1.2em; /* Ajustar tamanho da fonte */
+            margin-top: 10px; /* Diminuir margem */
         }
 
-        #contato form button {
-            background-color: rgb(0, 217, 255);
-            color: white;
-            border: none;
+        .checkout-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 8px; /* Diminuir padding */
             cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+            display: block;
+            text-decoration: none;
+            font-size: 0.9em; /* Diminuir tamanho da fonte */
         }
 
-        #contato form button:hover {
+        .checkout-btn:hover {
             background-color: #45a049;
         }
 
-        .map {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .details {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            margin: 20px auto; /* Margem de 20px em cima e embaixo, centralizado */
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            position: fixed; /* Fica fixo na tela */
+            top: 50%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta para centralização */
+            display: none; /* Ocultar inicialmente */
+            z-index: 2000; /* Fica acima do carrinho */
         }
 
-        .map h3 {
-            margin-bottom: 10px; /* Espaço entre o título e o mapa */
-        }
-
-        .map iframe {
+        .overlay {
+            display: none; /* Ocultar inicialmente */
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 400px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com opacidade de 70% */
+            z-index: 1500; /* Fica abaixo dos detalhes mas acima do conteúdo */
+        }
+
+        .details h2 {
+            margin-top: 0;
+        }
+
+        input[type="text"], input[type="date"], input[type="time"], input[type="tel"] {
+            width: 100%;
+            padding: 8px; /* Diminuir padding */
+            margin: 8px 0; /* Diminuir margem */
+        }
+
+        select {
+            width: 100%;
+            padding: 8px; /* Diminuir padding */
+            margin: 8px 0; /* Diminuir margem */
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
             border: none;
-            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
         }
 
-        /* Media Queries para Responsividade */
-        @media (max-width: 1200px) {
-            .product {
-                width: 45%; /* Ajusta largura para telas menores */
-            }
-
-            .search-bar input {
-                width: 150px; /* Ajusta a largura da barra de busca */
-            }
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
 
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column; /* Altera o layout da navegação */
-                align-items: flex-end; /* Alinha os itens à direita */
-            }
-
-            .menu {
-                width: 100%; /* Menu ocupa 100% da largura */
-                justify-content: flex-end; /* Alinha o menu à direita */
-                margin-bottom: 10px; /* Espaço entre menu e barra de busca */
-            }
-
-            .product {
-                width: 90%; /* Ajusta largura dos produtos para telas pequenas */
-            }
-
-            .hero h2 {
-                font-size: 2em; /* Reduz o tamanho do texto na hero */
-            }
-
-            .search-bar input {
-                width: 100%; /* Barra de busca ocupa 100% */
-                margin-bottom: 10px; /* Espaço abaixo da barra de busca */
-            }
+        /* Botão de sair */
+        .exit-btn {
+            background-color: #f44336;
+            color: #fff;
+            padding: 8px;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            margin-top: 10px;
+            width: 100%;
         }
 
-        @media (max-width: 480px) {
-            .hero h2 {
-                font-size: 1.5em; /* Reduz ainda mais o tamanho do texto na hero */
-            }
+        .exit-btn:hover {
+            background-color: #e53935;
+        }
 
-            .cart {
-                font-size: 1em; /* Reduz o tamanho do texto do carrinho */
-            }
+        /* Fatura A4 */
+        .invoice {
+            width: 21cm; /* Largura A4 */
+            height: 29.7cm; /* Altura A4 */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .invoice h1, .invoice h2, .invoice h3 {
+            text-align: center;
+        }
+
+        .invoice table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .invoice th, .invoice td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .invoice th {
+            background-color: #f2f2f2;
+        }
+
+        /* Botão Remover Profissional */
+        .remove-btn {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+
+        .remove-btn:hover {
+            background-color: #c9302c;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Master Business</h1>
+        <h1>MASTER BUSINESS Vendas Online</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#cart">Carrinho</a>
+        </nav>
     </header>
 
-    <nav>
-        <div class="menu">
-            <a href="#home">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#contato">Contato</a>
+    <section id="products" class="products">
+        <!-- Produtos -->
+        <div class="product">
+            <img src="produto1.jpg" alt="Produto 1">
+            <h3>Produto 1</h3>
+            <p>Preço: 10.000 Kz</p>
+            <button onclick="addToCart('Produto 1', 10000)">Adicionar ao carrinho</button>
         </div>
-        <div class="search-bar">
-            <button class="search-icon">🔍</button> <!-- Ícone de busca -->
+        <div class="product">
+            <img src="produto2.jpg" alt="Produto 2">
+            <h3>Produto 2</h3>
+            <p>Preço: 15.000 Kz</p>
+            <button onclick="addToCart('Produto 2', 15000)">Adicionar ao carrinho</button>
         </div>
-        
-        <div class="cart">
-            <a href="carrinho.html">🛒 Carrinho (0)</a>
+        <div class="product">
+            <img src="img/informaticos/dell-optiplex-.jpg" alt="Produto 3">
+            <h3>Desktop Dell-optiplex</h3>
+            <p>Preço: 120.000 Kz</p>
+            <button onclick="addToCart('Desktop Dell-optiplex', 120000)">Adicionar ao carrinho</button>
         </div>
-        
-    </nav>
-
-    <section class="hero" id="home">
-        <h2>Promoção Especial - Compre Agora!</h2>
-    </section>
-
-    <section id="produtos">
-        <div class="content">
-            <h2>Nossos Produtos</h2>
-            <div class="products">
-                <!-- Produtos -->
-                <div class="product">
-                    <img src="img/informaticos/Placa de son.png" alt="Produto 1">
-                    <h3>Scarlet 2i2</h3>
-                    <p>Placa de som de alta qualidade 24 bts</p>
-                    <p>Preço: 5.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="img/informaticos/mouse_game_rgb.jpg" alt="Produto 2">
-                    <h3>Mouse Gamer</h3>
-                    <p>Cabo USB, 2 metros, LED exterir</p>
-                    <p>Preço: 10.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="img/informaticos/piano.jpg" alt="Produto 3">
-                    <h3>Produto 3</h3>
-                    <p>Descrição do Produto 3</p>
-                    <p>Preço: 15.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="img/informaticos/teclado mecanico.jpg" alt="Produto 4">
-                    <h3>Produto 4</h3>
-                    <p>Descrição do Produto 4</p>
-                    <p>Preço: 20.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="img/informaticos/amplificador.jpg" alt="Produto 5">
-                    <h3>Produto 5</h3>
-                    <p>Descrição do Produto 5</p>
-                    <p>Preço: 25.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="img/informaticos/pedaleira.jpg" alt="Produto 6">
-                    <h3>Produto 6</h3>
-                    <p>Descrição do Produto 6</p>
-                    <p>Preço: 30.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Produto 7">
-                    <h3>Produto 7</h3>
-                    <p>Descrição do Produto 7</p>
-                    <p>Preço: 35.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Produto 8">
-                    <h3>Produto 8</h3>
-                    <p>Descrição do Produto 8</p>
-                    <p>Preço: 40.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Produto 9">
-                    <h3>Produto 9</h3>
-                    <p>Descrição do Produto 9</p>
-                    <p>Preço: 45.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Produto 10">
-                    <h3>Produto 10</h3>
-                    <p>Descrição do Produto 10</p>
-                    <p>Preço: 50.000 AOA</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-            </div>
+        <div class="product">
+            <img src="produto4.jpg" alt="Produto 4">
+            <h3>Produto 4</h3>
+            <p>Preço: 25.000 Kz</p>
+            <button onclick="addToCart('Produto 4', 25000)">Adicionar ao carrinho</button>
+        </div>
+        <div class="product">
+            <img src="produto5.jpg" alt="Produto 5">
+            <h3>Produto 5</h3>
+            <p>Preço: 30.000 Kz</p>
+            <button onclick="addToCart('Produto 5', 30000)">Adicionar ao carrinho</button>
+        </div>
+        <div class="product">
+            <img src="produto6.jpg" alt="Produto 6">
+            <h3>Produto 6</h3>
+            <p>Preço: 35.000 Kz</p>
+            <button onclick="addToCart('Produto 6', 35000)">Adicionar ao carrinho</button>
+        </div>
+        <div class="product">
+            <img src="produto7.jpg" alt="Produto 7">
+            <h3>Produto 7</h3>
+            <p>Preço: 40.000 Kz</p>
+            <button onclick="addToCart('Produto 7', 40000)">Adicionar ao carrinho</button>
+        </div>
+        <div class="product">
+            <img src="produto8.jpg" alt="Produto 8">
+            <h3>Produto 8</h3>
+            <p>Preço: 45.000 Kz</p>
+            <button onclick="addToCart('Produto 8', 45000)">Adicionar ao carrinho</button>
+        </div>
+        <div class="product">
+            <img src="produto9.jpg" alt="Produto 9">
+            <h3>Produto 9</h3>
+            <p>Preço: 50.000 Kz</p>
+            <button onclick="addToCart('Produto 9', 50000)">Adicionar ao carrinho</button>
+        </div>
+        <div class="product">
+            <img src="produto10.jpg" alt="Produto 10">
+            <h3>Produto 10</h3>
+            <p>Preço: 55.000 Kz</p>
+            <button onclick="addToCart('Produto 10', 55000)">Adicionar ao carrinho</button>
         </div>
     </section>
 
-    <section id="sobre">
-        <div class="content">
-            <h2>Sobre Nós</h2>
-            <p>Adicione informações sobre a sua empresa ou sobre você. Fale sobre sua missão, visão e valores.</p>
-        </div>
-    </section>
+    <aside class="cart">
+        <h2>Carrinho</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">Total: <span id="total">0</span> Kz</div>
+        <a href="#" class="checkout-btn" onclick="openCheckout()">Finalizar Compra</a>
+    </aside>
 
-    <section id="contato">
-        <div class="content">
-            <h2>Contato</h2>
-            <form>
-                <input type="text" placeholder="Seu Nome" required>
-                <input type="email" placeholder="Seu E-mail" required>
-                <input type="tel" placeholder="Seu Telefone">
-                <input type="text" placeholder="Assunto" required>
-                <textarea placeholder="Sua Mensagem" rows="4" required></textarea>
-                <button type="submit">Enviar Mensagem</button>
-            </form>
-            <div class="map">
-                <h3>Localização</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317165.87697503066!2d13.19386522648553!3d-8.839988968487147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a4b1b86bb5b4e59%3A0xc5db6fefea22ef7c!2sLuanda%2C%20Angola!5e0!3m2!1spt-BR!2sbr!4v1697280800913!5m2!1spt-BR!2sbr"></iframe>
-            </div>
-        </div>
-    </section>
-    <section id="carrinho">
-        <h2>Carrinho de Compras</h2>
-        <div id="carrinho-itens">
-            <!-- Itens do carrinho serão adicionados aqui -->
-        </div>
-        <p id="total">Total: 0 AOA</p>
-    </section>
-    <footer>
-        <p>&copy; 2024 Master Business. Todos os direitos reservados.</p>
-    </footer>
+    <div class="overlay"></div> <!-- Overlay para escurecer o fundo -->
+    
+    <div class="details">
+        <h2>Detalhes da Entrega</h2>
+        <input type="text" id="fullName" placeholder="Nome Completo" required>
+        <input type="tel" id="phone" placeholder="Número de Telefone" required>
+        <input type="date" id="deliveryDate" required>
+        <input type="time" id="deliveryTime" required>
+        <input type="text" id="address" placeholder="Endereço de Entrega" required>
+        <select id="paymentMethod">
+            <option value="">Forma de Pagamento</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartao">Cartão de Crédito</option>
+        </select>
+        <input type="submit" value="Confirmar Entrega" onclick="generateInvoice()">
+        <a href="#" class="exit-btn" onclick="closeDetails()">Sair</a> <!-- Botão para sair da página de detalhes -->
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            total += price;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = ""; // Limpar o carrinho
+            cart.forEach((item, index) => {
+                const div = document.createElement("div");
+                div.classList.add("cart-item");
+                div.innerHTML = `${item.product} - ${item.price} Kz 
+                                 <button class="remove-btn" onclick="removeFromCart(${index})">Remover</button>`; // Botão de remover
+                cartItems.appendChild(div);
+            });
+            document.getElementById("total").textContent = total;
+        }
+
+        function removeFromCart(index) {
+            total -= cart[index].price; // Subtrair o preço do produto removido
+            cart.splice(index, 1); // Remover o produto do carrinho
+            updateCart(); // Atualizar exibição do carrinho
+        }
+
+        function openCheckout() {
+            // Ocultar carrinho
+            const cartSection = document.querySelector(".cart");
+            cartSection.style.display = "none";
+
+            // Mostrar detalhes da entrega
+            const details = document.querySelector(".details");
+            details.style.display = "block";
+
+            // Mostrar overlay
+            const overlay = document.querySelector(".overlay");
+            overlay.style.display = "block";
+        }
+
+        function closeDetails() {
+            // Esconder detalhes da entrega
+            const details = document.querySelector(".details");
+            details.style.display = "none";
+
+            // Esconder overlay
+            const overlay = document.querySelector(".overlay");
+            overlay.style.display = "none";
+
+            // Mostrar carrinho novamente
+            const cartSection = document.querySelector(".cart");
+            cartSection.style.display = "block";
+        }
+
+        function generateInvoice() {
+            const fullName = document.getElementById("fullName").value;
+            const phone = document.getElementById("phone").value;
+            const deliveryDate = document.getElementById("deliveryDate").value;
+            const deliveryTime = document.getElementById("deliveryTime").value;
+            const address = document.getElementById("address").value;
+            const paymentMethod = document.getElementById("paymentMethod").value;
+
+            // Verificar se todos os campos foram preenchidos
+            if (!fullName || !phone || !deliveryDate || !deliveryTime || !address || !paymentMethod) {
+                alert("Por favor, preencha todas as informações de entrega.");
+                return;
+            }
+
+            // Gerar conteúdo da fatura
+            let content = `
+                <div class="invoice">
+                    <h1>Fatura</h1>
+                    <h2>MASTER BUSINESS</h2>
+                    <p>Endereço: Rua Exemplo, 123</p>
+                    <p>Telefone: +244 912 345 678</p>
+                    <p>Email: contato@masterbusiness.com</p>
+                    <hr>
+                    <h3>Informações do Cliente:</h3>
+                    <p>Nome Completo: ${fullName}</p>
+                    <p>Número de Telefone: ${phone}</p>
+                    <p>Data de Entrega: ${deliveryDate}</p>
+                    <p>Hora de Entrega: ${deliveryTime}</p>
+                    <p>Endereço: ${address}</p>
+                    <p>Forma de Pagamento: ${paymentMethod}</p>
+                    <hr>
+                    <h3>Produtos:</h3>
+                    <table>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                        </tr>`;
+            cart.forEach(item => {
+                content += `
+                    <tr>
+                        <td>${item.product}</td>
+                        <td>${item.price} Kz</td>
+                    </tr>`;
+            });
+            content += `
+                    </table>
+                    <h3>Total: ${total} Kz</h3>
+                    <div style="text-align: center;">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABrUlEQVR42mJ8P8qAF6Piwf7n5K2IE4J8T0Fh8BSAcEUv1D4BAXKIVyBDUjgwD1A5BkgR7AzKDVgUy6dOAAcJgFZgYQMAwAI4+7CKM2QShTgJrNZh4B9pHqgfIsgAkgk7R0AdZgGzCL+0KggwAMLgC24AIAAzLzA9gICDrQXAe8AiRhgUAAAACJZyAAABwZGE8gDgAWP8ggFUgAAAAAElFTkSuQmCC" alt="QR Code" width="100" height="100">
+                        <p>Escaneie o código QR para mais informações</p>
+                    </div>
+                </div>
+            `;
+
+            const pdfWindow = window.open("", "_blank");
+            pdfWindow.document.write(content);
+            pdfWindow.document.close();
+        }
+    </script>
 </body>
 </html>
