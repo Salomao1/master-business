@@ -18,7 +18,7 @@
         }
 
         header {
-            background-color: #3a3a3a;
+            background-color: #000000;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -80,7 +80,7 @@
         }
 
         .product button {
-            background-color: #ff5722;
+            background-color: #a10000;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -89,7 +89,7 @@
         }
 
         .product button:hover {
-            background-color: #e64a19;
+            background-color: #000000;
         }
 
         .cart {
@@ -170,6 +170,7 @@
             width: 100%;
             padding: 8px; /* Diminuir padding */
             margin: 8px 0; /* Diminuir margem */
+
         }
 
         select {
@@ -193,7 +194,7 @@
 
         /* Botão de sair */
         .exit-btn {
-            background-color: #f44336;
+            background-color: #a10000;
             color: #fff;
             padding: 8px;
             cursor: pointer;
@@ -205,7 +206,7 @@
         }
 
         .exit-btn:hover {
-            background-color: #e53935;
+            background-color: #000000;
         }
 
         /* Fatura A4 */
@@ -240,7 +241,7 @@
 
         /* Botão Remover Profissional */
         .remove-btn {
-            background-color: #d9534f;
+            background-color: #000000;
             color: white;
             border: none;
             padding: 5px 10px;
@@ -250,12 +251,12 @@
         }
 
         .remove-btn:hover {
-            background-color: #c9302c;
+            background-color: #a10000;
         }
         
 
         footer {
-    background: linear-gradient(180deg, #1a1a1a 0%, #333 100%); /* Gradiente de fundo */
+    background: linear-gradient(180deg, #000000 0%, #000000 100%); /* Gradiente de fundo */
     color: #ddd; /* Cor do texto suave */
     padding: 60px 20px; /* Aumentando o espaçamento */
     font-family: 'Arial', sans-serif; /* Fonte profissional */
@@ -352,11 +353,17 @@
 </head>
 <body>
     <header>
-        <h1>MASTER BUSINESS</h1>
+        <h1>MASTER</h1>
         <p>Vendas Online</p>
+
         <nav>
             <a href="#home">Pagina Inicial</a>
-            <a href="#cart">Carrinho</a>
+            <a href="#cart">Roupas</a>
+            <a href="#cart">Telefones</a>
+            <a href="#cart">Informáticos</a>
+            <a href="#cart">Música</a>
+            <a href="#cart">Electrodoméstico</a>
+            
         </nav>
     </header>
 
@@ -395,8 +402,8 @@
         <div class="product">
             <img src="img/informaticos/mouse_game_rgb.jpg" alt="Produto 6">
             <h3>Mouse Gamer</h3>
-            <p>Preço: 35.000 Kz</p>
-            <button onclick="addToCart('Mouse Gamer', 35000)">Adicionar ao carrinho</button>
+            <p>Preço: 3.500 Kz</p>
+            <button onclick="addToCart('Mouse Gamer', 3500)">Adicionar ao carrinho</button>
         </div>
         <div class="product">
             <img src="img/informaticos/amplificador.jpg" alt="Produto 7">
@@ -454,13 +461,14 @@
             <div class="footer-section about">
                 <h3>Sobre Nós</h3>
                 <p>
-                    Insira aqui uma breve descrição sobre a sua empresa. Fale sobre sua missão, visão e valores. 
-                    Explique o que torna sua loja especial e o que os clientes podem esperar.
+                    Desde 2019 satisfazendo os nossos clientes.
+                    Somos uma empresa de vendas online com entregas ao domicilio,
+                    Temos como objetivo satisfazer os pedidos dos nossos clientes.
                 </p>
                 <div class="contact">
                     <h4>Contato</h4>
-                    <p>Email: <a href="mailto:info@seusite.com">info@seusite.com</a></p>
-                    <p>Telefone: <a href="tel:+5511999999999">+55 11 99999-9999</a></p>
+                    <p>Email: <a href="mailto:info@seusite.com">salomaocarlo@gmail.com</a></p>
+                    <p>Telefone: <a href="tel:+244939394329">+244 939 394 329</a></p>
                 </div>
             </div>
     
@@ -487,8 +495,8 @@
         </div>
     
         <div class="footer-bottom">
-            <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p>
-            <p>Desenvolvido por <a href="#" target="_blank">Seu Nome ou Empresa</a></p>
+            <p>&copy; 2019 - 2024 Master. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="#" target="_blank">Salomão Carlos Martins</a></p>
         </div>
     </footer>
     
