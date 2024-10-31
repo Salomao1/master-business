@@ -263,6 +263,16 @@
     position: relative;
 }
 
+
+
+.logos-de-pagamento {
+    text-align: center;
+    margin: 1%;
+}
+.logos-de-pagamento img {
+    padding-left: 8px
+}
+
 .footer-container {
     display: flex; /* Utilizando flexbox para layout */
     justify-content: space-between;
@@ -370,10 +380,10 @@
     <section id="products" class="products">
         <!-- Produtos -->
         <div class="product">
-            <img src="img/informaticos/teclado mecanico.jpg" alt="Produto 1">
-            <h3>Teclado Mecanico</h3>
-            <p>Preço: 10.000 Kz</p>
-            <button onclick="addToCart('Teclado Mecanico', 10000)">Adicionar ao carrinho</button>
+            <img src="img/informaticos/Chave de Telefone Universal 30 em 1 peças.jpg" alt="Produto 1">
+            <h3>Chave de Telefone</h3>
+            <p>Preço: 4.000 Kz</p>
+            <button onclick="addToCart('Chave de Telefone Universal', 4000)">Adicionar ao carrinho</button>
         </div>
         <div class="product">
             <img src="img/informaticos/Placa de son.png" alt="Produto 2">
@@ -457,7 +467,16 @@
     </div>
 
     <footer>
+        <div class="logos-de-pagamento">
+            <img src="img/logo/express.png" alt="">
+            <img src="img/logo/banco bic.png" alt="">
+            <img src="img/logo/bfa.png" alt="">
+            <img src="img/logo/paypay.png" alt="">
+            <img src="img/logo/paypal.png" alt="">
+        </div>     
+      
         <div class="footer-container">
+
             <div class="footer-section about">
                 <h3>Sobre Nós</h3>
                 <p>
@@ -482,7 +501,7 @@
                     <li><a href="#">Devoluções</a></li>
                 </ul>
             </div>
-    
+
             <div class="footer-section social">
                 <h3>Siga-nos</h3>
                 <ul class="social-links">
